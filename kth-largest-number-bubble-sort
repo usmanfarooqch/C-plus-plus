@@ -1,0 +1,37 @@
+/******************************************************************************
+
+                              Kth Largest number
+In simple words its a selection problem which means you need to find out second
+largest number or kth largest form the whole array it can be 3rd largest and so
+on. I have used bubble sort to sort array and then get the value of that specific
+index.
+
+*******************************************************************************/
+
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+     
+int foo [5] = { 16, 2, 77, 40, 12071 };
+
+for(int i=0; i<5; i++)
+{
+    for(int j=0; j<5; j++)
+    {
+        if(foo[i]<foo[j])
+        {
+            int temp = foo[i];
+            foo[i] = foo[j];
+            foo[j] = temp;
+        }
+    }
+}
+
+//Because we have static array of five in decending order so will take second last element
+cout<<"2nd Largest Number is";
+cout<<foo[3];
+    return 0;
+}
