@@ -1,0 +1,35 @@
+/******************************************************************************
+
+                             Sorting Algorithm
+                               Bubble Sort
+
+*******************************************************************************/
+
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+     
+int foo [5] = { 16, 2, 77, 40, 12071 };
+
+for(int i=0; i<5; i++)
+{
+    for(int j=0; j<5; j++)
+    {
+        if(foo[i]<foo[j])
+        {
+            int temp = foo[i];
+            foo[i] = foo[j];
+            foo[j] = temp;
+        }
+    }
+}
+for(int i=0;i<5;i++){
+
+    cout<<foo[i]<<endl;
+}
+
+    return 0;
+}
