@@ -1,0 +1,58 @@
+
+#include <iostream>
+
+using namespace std;
+
+struct Node{
+    int data;
+    Node *next;
+};
+Node *head=NULL;
+void insertNode(int data)
+{
+    Node *node;
+    node =new Node;
+    node->data=data;
+    node->next=head;
+    head=node;
+}
+
+int main()
+{
+    insertNode(1);
+    insertNode(2);
+    insertNode(3);
+    insertNode(4);
+    insertNode(5);
+    
+    Node *ret=head;
+    while(true)
+    {
+  
+        if(ret->next==NULL)
+        {
+            Node *usman;
+            usman= new Node;
+            ret->next=usman;
+            usman->next=NULL;
+            usman->data=6;
+            
+            break;
+        }
+        ret=ret->next;
+    }
+    
+     Node *u=head;
+    while(true)
+    {
+        std::cout << u->data << std::endl;
+        if(u->next==NULL)
+        {
+            
+            
+            break;
+        }
+        u=u->next;
+    }
+    return 0;
+}
