@@ -1,0 +1,83 @@
+#include <iostream>
+using namespace std;
+
+/* run this program using the console pauser or add your own getch, system("pause") or input loop */
+class Stack{
+	private:
+		int *stackArray;
+		int top;
+		int stackSize;
+	public:
+		Stack(int);
+		void push(int);
+		bool isFull();
+		int pop();
+		bool isEmpty();
+};
+Stack::Stack(int size)
+{
+	stackArray=new int[size];
+	stackSize=size;
+	top=-1;
+
+}
+bool Stack::isFull()
+{
+	if(top+1<stackSize) return true;
+	else return false;
+}
+void Stack::push(int data)
+{
+	
+	if(!isFull()){
+		cout<<"Stack is full";
+		exit(0);
+	}
+	else{
+		top++;
+		stackArray[top]=data;
+	}
+
+}
+bool Stack::isEmpty(){
+	if(top<0)
+	{
+		return true;
+	}
+	else{return false;
+	}
+}
+int Stack::pop()
+{
+	
+	if(!isEmpty()){
+		int val= stackArray[top];
+		top--;
+		return val;
+	}
+	else{
+		cout<<"\nStack became empty";
+		exit(0);
+	}
+}
+
+
+int main() {
+	Stack stack(4);
+	stack.push(1);
+	stack.push(2);
+	stack.push(3);
+	stack.push(4);
+	cout<<stack.pop();
+	cout<<stack.pop();
+	cout<<stack.pop();
+	cout<<stack.pop();
+	cout<<stack.pop();
+
+
+
+
+
+
+	return 0;
+}
